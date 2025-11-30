@@ -1,5 +1,7 @@
 # Required-Assignment-11.1-What-Drives-the-Price-of-a-Car-
 Required Assignment 11.1
+Jupyter Notebook: https://github.com/rarces82-rockyory/Required-Assignment-11.1-What-Drives-the-Price-of-a-Car-/blob/main/Roy_A_practical_application_ll_GIT.ipynb
+
 Executive Summary – Key Insights for Optimizing Used Car Inventory
 
 Dear Used Car Dealership Team,
@@ -48,10 +50,9 @@ These are common in compact sedans, wagons, and economy vehicles.
 Price reductions typically range from $1,000 to $7,000 compared to larger engines.
 
 Fuel Type (Gas & Hybrid):
-Gasoline and hybrid vehicles tend to cost less on average compared to:
-	•	Diesel vehicles (higher torque, greater longevity, stronger demand in rural regions)
+Gasoline and hybrid vehicles tend to cost less on average compared to diesel vehicles
 
- Older Body Styles:
+Traditional Body Styles:
 Station wagons, compact sedans, and base-trim vehicles generally fall into lower price brackets.
 
 4. Market Demand – What Sells the Most?
