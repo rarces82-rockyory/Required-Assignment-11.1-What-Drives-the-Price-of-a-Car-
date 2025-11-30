@@ -1,8 +1,51 @@
 # Required-Assignment-11.1-What-Drives-the-Price-of-a-Car-
 Required Assignment 11.1
-Jupyter Notebook: https://github.com/rarces82-rockyory/Required-Assignment-11.1-What-Drives-the-Price-of-a-Car-/blob/main/Roy_A_practical_application_ll_GIT.ipynb
 
-Executive Summary – Key Insights for Optimizing Used Car Inventory
+**Jupyter Notebook:** https://github.com/rarces82-rockyory/Required-Assignment-11.1-What-Drives-the-Price-of-a-Car-/blob/main/Roy_A_practical_application_ll_GIT.ipynb
+
+**Model Design**
+
+The first step was data cleaning. The dataset contained several missing values, a very large number of rows, and extremely large outliers in the price column.
+I tested three different methods for handling outliers (Z-score, IQR, and manual filtering) and selected the approach that produced the lowest MSE.
+Next, I built two forecasting models:
+1. Model A – Simple Linear Regression (Numeric Features Only)
+	•	Uses only year and odometer as predictors.
+	•	A SimpleImputer with strategy "mean" was applied to handle missing values.
+	•	This model provides a baseline to compare against the more complex model.
+
+2. Model B – Multiple Regression with Mixed Features (Numeric + Categorical)
+	•	Includes numeric features (year, odometer) and several categorical features (manufacturer, condition, cylinders, fuel, drive, type, state).
+	Numeric data was processed with:
+	•	SimpleImputer(strategy="mean")
+	•	PolynomialFeatures(degree=2)
+	•	StandardScaler()
+	Categorical data was processed with:
+	•	SimpleImputer(strategy="most_frequent")
+	•	OneHotEncoder(handle_unknown="ignore")
+Both pipelines were combined using a ColumnTransformer.
+A Ridge regression model was applied to reduce overfitting.
+
+Model Evaluation & Tuning
+
+After fitting the model pipeline, I noticed that the MSE was too large to interpret due to the wide range of prices (0–300,000+).
+For this reason, RMSE was used as the main performance metric.
+	•	Best model RMSE: ≈ 7,448.9
+	•	Performed cross-validation, which yielded RMSE values around 7,820.8 across folds.
+	•	Conducted Grid Search to tune the Ridge parameter.
+	•	Best alpha: 0.1
+	•	This improved the overall error and stability of the model.
+
+Feature Importance (Coefficients)
+
+To understand what drives car prices, I extracted and analyzed the model coefficients.
+
+I generated a table showing the Top 15 positive and Top 15 negative coefficients among the categorical variables.
+To get accurate and interpretable results, I excluded certain highly granular fields such as model and year, since those features were included in other analysis
+This allowed me to better understand which brands, fuel types, conditions, engine sizes, and states have the strongest upward or downward impact on vehicle price
+
+
+
+**Executive Summary – Key Insights for Optimizing Used Car Inventory**
 
 Dear Used Car Dealership Team,
 
