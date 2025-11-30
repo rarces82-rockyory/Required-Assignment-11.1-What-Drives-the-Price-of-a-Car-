@@ -142,10 +142,6 @@ Next Steps
 - Integrate this model with your sales team and procurement  
 - Continue monitoring new listings to update coefficients  
 - Analyze seasonality to forecast peak buying periods  
-
-
-Unless price or condition gives them strong value.
-
-•	Use geographic demand insights
-Vehicles sourced from OR, UT, HI, MT, WA often carry higher resale value
+- Use geographic demand insights
+- Vehicles sourced from OR, UT, HI, MT, WA often carry higher resale value
 
